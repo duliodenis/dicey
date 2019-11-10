@@ -26,5 +26,12 @@ class ViewController: UIViewController {
         diceImageViewTwo.alpha = 0.5
     }
 
+    @IBAction func roll(_ sender: UIButton) {
+        diceImageViewOne.image = #imageLiteral(resourceName: "DiceFour")
+        diceImageViewOne.alpha = 1
+        
+        diceImageViewTwo.image = #imageLiteral(resourceName: "DiceFour")
+        diceImageViewTwo.alpha = 1
+    }
 }
 
