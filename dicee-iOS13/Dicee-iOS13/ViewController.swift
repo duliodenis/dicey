@@ -13,25 +13,12 @@ class ViewController: UIViewController {
     // IBOutlets allow me to reference UI elements
     @IBOutlet weak var diceImageViewOne: UIImageView!
     @IBOutlet weak var diceImageViewTwo: UIImageView!
+    let diceArray = [#imageLiteral(resourceName: "DiceOne"),#imageLiteral(resourceName: "DiceTwo"),#imageLiteral(resourceName: "DiceThree"),#imageLiteral(resourceName: "DiceFour"),#imageLiteral(resourceName: "DiceFive"),#imageLiteral(resourceName: "DiceSix")]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Usage of Image Literals
-        // Who           What    Value
-        diceImageViewOne.image = #imageLiteral(resourceName: "DiceSix")
-        diceImageViewOne.alpha = 0.5
-        
-        diceImageViewTwo.image = #imageLiteral(resourceName: "DiceFive")
-        diceImageViewTwo.alpha = 0.5
-    }
-
     @IBAction func roll(_ sender: UIButton) {
-        diceImageViewOne.image = #imageLiteral(resourceName: "DiceFour")
-        diceImageViewOne.alpha = 1
-        
-        diceImageViewTwo.image = #imageLiteral(resourceName: "DiceFour")
-        diceImageViewTwo.alpha = 1
+        // Two different ways to pick a random element of the array
+        diceImageViewOne.image = diceArray.randomElement()
+        diceImageViewTwo.image = diceArray[Int.random(in: 0...5)]
     }
 }
 
